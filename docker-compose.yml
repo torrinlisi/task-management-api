@@ -1,0 +1,18 @@
+tasks-service:
+  container_name: tasks-service
+  build: ./services/tasks/
+  volumes:
+    - './services/tasks:/usr/src/app'
+    - './services/tasks/package.json:/usr/src/package.json'
+  ports:
+    - '3000:3000' # expose ports - HOST:CONTAINER
+  # environment:
+  #   - DATABASE_URL=postgres://postgres:postgres@users-db:5432/users_dev
+  #   - DATABASE_TEST_URL=postgres://postgres:postgres@users-db:5432/users_test
+  #   - NODE_ENV=${NODE_ENV}
+  #   - TOKEN_SECRET=changeme
+  # depends_on:
+  #   users-db:
+  #     condition: service_healthy
+  # links:
+  #   - users-db
