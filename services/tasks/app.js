@@ -51,7 +51,37 @@ app.get('/', (req, res) => {
   //perform the find
   Task.find(searchParams, (err, tasks) => {
     if(err) res.send(err);
-    res.json(tasks);
+    else res.json(tasks);
+  });
+});
+
+//update task (isComplete)
+app.put('/', (req, res) => {
+  let searchParam = {
+    _id: req.body._id
+  }
+
+  let updateObj = {
+    isComplete: req.body.isComplete
+  }
+
+  //update record
+  Task.updateOne(searchParam, updateObj, function (err) {
+    if (err) res.send(err);
+    else res.send("Success!");
+  });
+});
+
+//delete task
+app.delete('/', (req, res) => {
+  let searchParam = {
+    _id: req.body._id
+  }
+
+  //update record
+  Task.deleteOne(searchParam, function (err) {
+    if (err) res.send(err);
+    else res.send("Success!");
   });
 });
 
