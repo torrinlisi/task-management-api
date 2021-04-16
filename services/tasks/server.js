@@ -5,3 +5,5 @@ app.set('port', port);
 
 console.log(`Task service listening on port ${port}`);
 app.listen(port);
+
+module.exports = app;

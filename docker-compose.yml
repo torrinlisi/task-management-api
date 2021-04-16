@@ -4,4 +4,7 @@ services:
   taskapi:
     image: taskapi
     environment:
-        - APPID=1111
+        - APPID=9999
+        - DATABASE_CONNECTION=mongodb+srv://torrin:MmNu5vLYOVtML9oOgLTB@cluster0.ig46j.mongodb.net/task_management?retryWrites=true&w=majority
+    ports:
+        - "9999:9999"
