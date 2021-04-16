@@ -1,6 +1,6 @@
 const app = require('./app');
 
-const port = process.env.PORT || '3000';
+const port = process.env.APPID || '3000';
 app.set('port', port);
 
 console.log(`Task service listening on port ${port}`);
