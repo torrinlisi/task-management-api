@@ -75,7 +75,7 @@ app.put('/', (req, res) => {
 //delete task
 app.delete('/', (req, res) => {
   let searchParam = {
-    _id: req.body._id
+    _id: req.query._id
   }
 
   //update record
