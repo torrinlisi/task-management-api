@@ -104,7 +104,7 @@ app.post('/', (req, res) => {
   //save instance to mongo
   taskInstance.save(function (err) {
     if (err) res.send(err);
-    res.send("Success!");
+    else res.send("Success!");
   });
 });
 
